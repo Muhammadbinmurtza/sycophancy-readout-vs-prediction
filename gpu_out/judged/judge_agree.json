@@ -1,0 +1,102 @@
+{
+ "calib_real": {
+  "n": 1634,
+  "AB_agree": 0.7086903304773562,
+  "kappa3_A": 0.500920947193608,
+  "kappa3_B": 0.44157030793476537,
+  "kappa3_consensus": 0.4250872790748418,
+  "n_binary": 895,
+  "kappa2_consensus": 0.8303190560530845,
+  "confusion_claude_vs_consensus": {
+   "IU": 283,
+   "II": 396,
+   "UU": 170,
+   "UC": 52,
+   "CU": 204,
+   "CC": 423,
+   "CI": 19,
+   "UI": 30,
+   "IC": 57
+  }
+ },
+ "calib_e9": {
+  "n": 2536,
+  "AB_agree": 0.7409305993690851,
+  "kappa3_A": 0.41804116475552944,
+  "kappa3_B": 0.46846306275564553,
+  "kappa3_consensus": 0.3720588414877334,
+  "n_binary": 1511,
+  "kappa2_consensus": 0.8434787755917456,
+  "confusion_claude_vs_consensus": {
+   "CC": 1121,
+   "CU": 670,
+   "UI": 18,
+   "UU": 156,
+   "II": 306,
+   "IU": 138,
+   "CI": 69,
+   "UC": 43,
+   "IC": 15
+  }
+ },
+ "qwen3_4b_real": {
+  "n": 1634,
+  "AB_agree": 0.762545899632803,
+  "kappa3_A": 0.5587241832761778,
+  "kappa3_B": 0.46805956885825384,
+  "kappa3_consensus": 0.4479757256620841,
+  "n_binary": 1132,
+  "kappa2_consensus": 0.7842503610651104,
+  "confusion_claude_vs_consensus": {
+   "CC": 814,
+   "IU": 279,
+   "CU": 144,
+   "II": 228,
+   "IC": 85,
+   "UU": 50,
+   "UI": 9,
+   "UC": 20,
+   "CI": 5
+  }
+ },
+ "llama3b_real": {
+  "n": 1634,
+  "AB_agree": 0.6988984088127295,
+  "kappa3_A": 0.5242090851070658,
+  "kappa3_B": 0.4192438180788236,
+  "kappa3_consensus": 0.4096288400123006,
+  "n_binary": 930,
+  "kappa2_consensus": 0.8714705344970556,
+  "confusion_claude_vs_consensus": {
+   "CU": 195,
+   "II": 382,
+   "CC": 489,
+   "IU": 349,
+   "UU": 98,
+   "UC": 35,
+   "UI": 27,
+   "CI": 20,
+   "IC": 39
+  }
+ },
+ "gemma4b_real": {
+  "n": 1634,
+  "AB_agree": 0.6731946144430845,
+  "kappa3_A": 0.5129893400480897,
+  "kappa3_B": 0.3749099833487932,
+  "kappa3_consensus": 0.3945082775719122,
+  "n_binary": 905,
+  "kappa2_consensus": 0.8290712989885435,
+  "confusion_claude_vs_consensus": {
+   "CC": 480,
+   "II": 349,
+   "IU": 422,
+   "UU": 110,
+   "CU": 142,
+   "CI": 11,
+   "IC": 65,
+   "UC": 43,
+   "UI": 12
+  }
+ }
+}

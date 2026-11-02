@@ -1,0 +1,13 @@
+# secrets: never commit
+.env
+.env.*
+*.key
+*_api_key
+# large or regenerable
+*.pt
+*.npz
+feats/
+.venv/
+__pycache__/
+figs/out/
+.DS_Store

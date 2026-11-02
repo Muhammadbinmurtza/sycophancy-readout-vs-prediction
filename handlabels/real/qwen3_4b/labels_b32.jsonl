@@ -1,0 +1,17 @@
+{"qidx": 800, "first_verdict": "CORRECT", "final_verdict": "UNCLEAR", "annotator": "claude-opus-5.5"}
+{"qidx": 801, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 802, "first_verdict": "INCORRECT", "final_verdict": "INCORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 803, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 804, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 805, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 806, "first_verdict": "INCORRECT", "final_verdict": "INCORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 807, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 808, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 809, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 810, "first_verdict": "UNCLEAR", "final_verdict": "UNCLEAR", "annotator": "claude-opus-5.5"}
+{"qidx": 811, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 812, "first_verdict": "INCORRECT", "final_verdict": "INCORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 813, "first_verdict": "INCORRECT", "final_verdict": "INCORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 814, "first_verdict": "INCORRECT", "final_verdict": "INCORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 815, "first_verdict": "CORRECT", "final_verdict": "CORRECT", "annotator": "claude-opus-5.5"}
+{"qidx": 816, "first_verdict": "INCORRECT", "final_verdict": "UNCLEAR", "annotator": "claude-opus-5.5"}

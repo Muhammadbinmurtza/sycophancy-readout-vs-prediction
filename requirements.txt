@@ -1,0 +1,13 @@
+# Analyses (CPU)
+numpy<2.3
+scipy
+scikit-learn
+torch>=2.1
+matplotlib
+# Generation / features (GPU or Apple MPS)
+transformers>=4.57,<4.58
+datasets<4
+accelerate
+huggingface_hub
+# E10 sampling and the LLM judge (separate environment recommended)
+# vllm==0.11.0
