@@ -1,0 +1,19 @@
+{
+ "tag": "qwen7b",
+ "layer": 21,
+ "r": 0.2801491074129481,
+ "calibration_slope": 0.7118453321338913,
+ "quintile_mean_actual": [
+  -0.06385293742151758,
+  -0.01389247469347491,
+  -0.00019455972020023587,
+  0.020730631930419133,
+  0.057221077709573485
+ ],
+ "top_minus_bottom_pp": 12.107401513109107,
+ "sd_actual_pp": 18.33188502794763,
+ "within_q_mean_spearman": 0.23933201058201062,
+ "n_q_within": 360,
+ "within_q_worst_above_median": 0.65,
+ "reliable_variance_explained": 0.09006272991083598
+}

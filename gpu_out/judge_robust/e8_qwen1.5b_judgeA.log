@@ -1,0 +1,5 @@
+{'CI': 75, 'CC': 145, 'other': 597}
+ans top16 transfer  AUROC 0.737 [0.669, 0.798]
+ans top16 indomain  AUROC 0.832 [0.773, 0.886]
+pre top16 transfer  AUROC 0.380 [0.298, 0.459]
+pre top16 indomain  AUROC 0.696 [0.622, 0.765]

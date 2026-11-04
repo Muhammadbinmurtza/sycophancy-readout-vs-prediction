@@ -10,7 +10,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-R = ".."  # repository root; run from figs/
+R = "../../sycophancy-locus"
 BLUE, ORANGE, AQUA, YELLOW = "#2a78d6", "#eb6834", "#1baf7a", "#eda100"
 INK, MUTED, GRID = "#22252a", "#6b6f76", "#e3e4e6"
 MODELS = [("qwen1.5b", "Qwen2.5-1.5B", f"{R}/pilot/e8_qwen1.5b_claude.json"),
@@ -18,7 +18,7 @@ MODELS = [("qwen1.5b", "Qwen2.5-1.5B", f"{R}/pilot/e8_qwen1.5b_claude.json"),
           ("llama3b", "Llama-3.2-3B", f"{R}/gpu_out/llama3b/e8_llama3b_claude.json"),
           ("gemma4b", "Gemma-3-4B", f"{R}/gpu_out/gemma4b/e8_gemma4b_claude.json")]
 
-plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8.5, "axes.edgecolor": MUTED,
+plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9.5, "axes.edgecolor": MUTED,
                      "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED, "axes.linewidth": 0.6,
                      "axes.spines.top": False, "axes.spines.right": False, "legend.frameon": False})
 
@@ -37,7 +37,7 @@ def save(fig, name):
 
 def fig_e8():
     """Per-layer resid AUROC on real episodes: simulated->real transfer vs in-domain, answer vs pre-reply."""
-    fig, axes = plt.subplots(2, 4, figsize=(7.2, 3.6), sharey=True)
+    fig, axes = plt.subplots(2, 4, figsize=(7.2, 4.2), sharey=True)
     for j, (tag, name, path) in enumerate(MODELS):
         pl = json.load(open(path))["per_layer"]
         for i, ro in enumerate(("ans", "pre")):
@@ -45,20 +45,20 @@ def fig_e8():
             ks = sorted([k for k in pl if k.startswith(ro + "_L")], key=lambda k: int(k.split("L")[1]))
             n = len(ks) - 1
             x = [int(k.split("L")[1]) / n for k in ks]
-            ax.axhline(0.5, color=MUTED, lw=0.7, ls=(0, (3, 2)))
+            ax.axhline(0.5, color=MUTED, lw=0.8, ls=(0, (3, 2)), label="chance")
             ax.plot(x, [pl[k]["indomain"] for k in ks], color=ORANGE, lw=1.6, marker="s", ms=2.2, label="in-domain (real)")
             ax.plot(x, [pl[k]["transfer"] for k in ks], color=BLUE, lw=1.6, marker="o", ms=2.2, label="trained on simulated")
             ax.set_ylim(0.25, 1.0)
             ax.set_xticks([0, 0.5, 1])
             style(ax)
             if i == 0:
-                ax.set_title(name, fontsize=9, color=INK)
+                ax.set_title(name, fontsize=10, color=INK)
             if j == 0:
                 ax.set_ylabel(("Answer read-out" if ro == "ans" else "Pre-reply") + "\nAUROC")
             if i == 1:
                 ax.set_xlabel("relative layer depth")
     h, l = axes[0, 0].get_legend_handles_labels()
-    fig.legend(h, l, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.04))
+    fig.legend(h, l, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 1.05))
     fig.tight_layout()
     save(fig, "fig_e8_layers")
 
@@ -66,7 +66,7 @@ def fig_e8():
 def fig_e10():
     """E10: out-of-fold r per layer (two-way FE residual P(cave)) for the in-domain probe and the
     simulated-dialogue probe, with the max-over-layers null threshold."""
-    fig, axes = plt.subplots(1, 4, figsize=(7.2, 2.5), sharey=True)
+    fig, axes = plt.subplots(1, 4, figsize=(7.2, 3.0), sharey=True)
     for ax, (tag, name, _) in zip(axes, MODELS):
         a = json.load(open(f"{R}/gpu_out/e10/e10_{tag}_p200.json"))
         g = json.load(open(f"{R}/gpu_out/e10/e10_genadi_{tag}.json"))
@@ -82,14 +82,15 @@ def fig_e10():
                 ms=2.2, label="trained on simulated (resid)")
         ax.axhline(g["top16_r"], color=BLUE, lw=1.2, ls=(0, (4, 2)), label="trained on simulated (top-16 heads)")
         b = a["primary"]["best_layer"]
-        ax.annotate(f"r = {fe[b]:.2f}", (b / L, fe[b]), xytext=(4, 4), textcoords="offset points", color=INK, fontsize=8)
-        ax.set_title(name, fontsize=9, color=INK)
+        ax.annotate(f"r = {fe[b]:.2f}", (b / L, fe[b]), xytext=(4, 4), textcoords="offset points", color=INK, fontsize=9)
+        ax.set_ylim(-0.12, 0.40)
+        ax.set_title(name, fontsize=10, color=INK)
         ax.set_xlabel("relative layer depth")
         ax.set_xticks([0, 0.5, 1])
         style(ax)
     axes[0].set_ylabel("out-of-fold r with\nresidual P(cave)")
     h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.16))
+    fig.legend(h, l, loc="upper center", ncol=2, bbox_to_anchor=(0.5, 1.14))
     fig.tight_layout()
     save(fig, "fig_e10")
 

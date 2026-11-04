@@ -1,0 +1,19 @@
+{
+ "tag": "qwen1.5b",
+ "layer": 20,
+ "r": 0.27178832278483145,
+ "calibration_slope": 0.7809007971231787,
+ "quintile_mean_actual": [
+  -0.055533309567519576,
+  -0.003998044066311682,
+  -0.0074677521895898874,
+  0.015191963929298643,
+  0.05183444413769076
+ ],
+ "top_minus_bottom_pp": 10.736775370521034,
+ "sd_actual_pp": 16.209399032296005,
+ "within_q_mean_spearman": 0.18931764276591867,
+ "n_q_within": 261,
+ "within_q_worst_above_median": 0.6168582375478927,
+ "reliable_variance_explained": 0.12904603449144994
+}

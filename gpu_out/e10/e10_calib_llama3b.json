@@ -1,0 +1,19 @@
+{
+ "tag": "llama3b",
+ "layer": 16,
+ "r": 0.27353919167461976,
+ "calibration_slope": 0.7320040129165734,
+ "quintile_mean_actual": [
+  -0.06316069657104742,
+  -0.018946116540100272,
+  -0.0009188500970740235,
+  0.011199015549925962,
+  0.0718266476582958
+ ],
+ "top_minus_bottom_pp": 13.498734422934323,
+ "sd_actual_pp": 17.740182298021875,
+ "within_q_mean_spearman": 0.21058025859350368,
+ "n_q_within": 302,
+ "within_q_worst_above_median": 0.6357615894039735,
+ "reliable_variance_explained": 0.13199439011866054
+}

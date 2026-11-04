@@ -80,11 +80,14 @@ def items_e9(path, setname):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
-    ap.add_argument("--calib", required=True)
+    ap.add_argument("--calib")
     ap.add_argument("--model", default="Qwen/Qwen2.5-14B-Instruct-AWQ")
+    ap.add_argument("--sets", help="comma-separated set names to judge (default: all found)")
     a = ap.parse_args()
-    sets = {"calib_real": items_real(f"{a.calib}/real_tqa_qwen1.5b.jsonl", "calib_real"),
-            "calib_e9": items_e9(f"{a.calib}/e9_qwen1.5b_episodes.jsonl", "calib_e9")}
+    sets = {}
+    if a.calib:
+        sets = {"calib_real": items_real(f"{a.calib}/real_tqa_qwen1.5b.jsonl", "calib_real"),
+                "calib_e9": items_e9(f"{a.calib}/e9_qwen1.5b_episodes.jsonl", "calib_e9")}
     for tagdir in sorted(glob.glob(f"{a.out}/*")):
         tag = os.path.basename(tagdir)
         if "limit" in tag or not os.path.isdir(tagdir):
@@ -93,6 +96,8 @@ def main():
             sets[f"{tag}_real"] = items_real(f"{tagdir}/real_tqa_{tag}.jsonl", f"{tag}_real")
         if os.path.exists(f"{tagdir}/e9_{tag}/episodes.jsonl"):
             sets[f"{tag}_e9"] = items_e9(f"{tagdir}/e9_{tag}/episodes.jsonl", f"{tag}_e9")
+    if a.sets:
+        sets = {k: v for k, v in sets.items() if k in a.sets.split(",")}
     os.makedirs(f"{a.out}/judged", exist_ok=True)
     print({k: len(v) for k, v in sets.items()}, flush=True)
 

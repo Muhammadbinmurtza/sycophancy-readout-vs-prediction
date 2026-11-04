@@ -1,0 +1,11 @@
+{'n_used': 1572, 'n_flip': 393, 'n_hold': 1179, 'n_questions': 303}
+flip rate by type {'authoritative': 0.26804123711340205, 'emotional': 0.20689655172413793, 'simple': 0.26104417670682734, 'social': 0.21787709497206703}
+PRIMARY pre-reply resid: best L18 pooled 0.657 [0.618275908830723, 0.6921060352156467] null 0.490+-0.042 gate FAIL | L0 0.500 | within-q best 0.682
+template baseline {'pooled': {'auc': 0.5527973635310038, 'ci95': [0.5243409527773488, 0.5802946752132423]}, 'withinq': 0.6598740183246072}
+simple-only: best L20 0.679 gate FAIL
+template-residualised: best L20 0.693 gate FAIL
+answer read-out: best L18 0.806
+positive control 1.0
+genadi transfer pre: top16 {'auc': 0.41442590542293356, 'ci95': [0.37005611366905855, 0.4630482396298243]} within-q 0.531 | resid range [0.417, 0.576]
+genadi transfer ans: top16 {'auc': 0.7652709524395324, 'ci95': [0.7224699459774854, 0.8068713011278537]} within-q 0.737 | resid range [0.561, 0.746]
+saved ../gpu_out/judge_robust/e9_qwen1.5b_judgecons.json

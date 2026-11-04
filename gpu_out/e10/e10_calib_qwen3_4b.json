@@ -1,0 +1,19 @@
+{
+ "tag": "qwen3_4b",
+ "layer": 23,
+ "r": 0.3293818798802864,
+ "calibration_slope": 0.8215961230993734,
+ "quintile_mean_actual": [
+  -0.08117792716403067,
+  -0.0158834360811537,
+  -0.0011026629654449385,
+  0.015189106127169557,
+  0.08297240680664938
+ ],
+ "top_minus_bottom_pp": 16.415033397068008,
+ "sd_actual_pp": 18.808865890970488,
+ "within_q_mean_spearman": 0.2657783286850532,
+ "n_q_within": 461,
+ "within_q_worst_above_median": 0.6963123644251626,
+ "reliable_variance_explained": 0.12761109227184847
+}

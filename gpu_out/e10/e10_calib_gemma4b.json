@@ -1,0 +1,19 @@
+{
+ "tag": "gemma4b",
+ "layer": 22,
+ "r": 0.20006508628231567,
+ "calibration_slope": 0.5624798514078033,
+ "quintile_mean_actual": [
+  -0.07151913770810994,
+  -0.021871301361600357,
+  0.0037862537276003127,
+  0.024985844181663695,
+  0.06462677379681069
+ ],
+ "top_minus_bottom_pp": 13.61459115049206,
+ "sd_actual_pp": 25.204742467645385,
+ "within_q_mean_spearman": 0.1656359859379994,
+ "n_q_within": 298,
+ "within_q_worst_above_median": 0.5939597315436241,
+ "reliable_variance_explained": 0.04484995929762172
+}
